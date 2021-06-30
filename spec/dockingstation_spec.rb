@@ -1,13 +1,11 @@
 require "docking_station"
 require "bike"
 
-
-
 describe DockingStation do
 
     # (Previous legacy test to check that release_bike existed)
     # it 'releases working bikes' do
-    #     bike = Bike
+    #     let (:b) {Bike.new}
     #     b = subject.dock(bike).release_bike
     #     expect(b).to respond_to(:working?)
     # end
