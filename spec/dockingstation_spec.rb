@@ -5,9 +5,11 @@ require "bike"
 
 describe DockingStation do
 
+    # (Previous legacy test to check that release_bike existed)
     # it 'releases working bikes' do
-    #     bike = subject(bike).release_bike
-    #     expect(bike).to respond_to(:working?)
+    #     bike = Bike
+    #     b = subject.dock(bike).release_bike
+    #     expect(b).to respond_to(:working?)
     # end
     
     it { is_expected.to respond_to(:dock).with(1).argument }
