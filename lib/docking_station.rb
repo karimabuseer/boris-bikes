@@ -2,6 +2,7 @@ require_relative 'bike'
 
 class DockingStation
     def release_bike
+        fail "Bike doesn't exist" if @bike == nil
         Bike.new
     end
     
@@ -11,3 +12,4 @@ class DockingStation
         @bike = bike
     end
 end
+
