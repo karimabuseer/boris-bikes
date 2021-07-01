@@ -1,15 +1,19 @@
 require_relative 'bike'
 
-class DockingStation
-    def release_bike
-        fail "Bike doesn't exist" if @bike == nil
-        @bike
+class DockingStation    
+    def initialize(capacity = 20)
+        @capacity = capacity
+        @bikes = []
     end
-    
-    attr_reader :bike
+    attr_reader :bikes 
+    attr_reader :capacity
+
+    def release_bike
+        @bikes.empty? ? (raise "No bikes") : (@bikes.pop)
+    end
 
     def dock(bike)
-        @bike ? (raise "Capacity full") : @bike = bike
+        @bikes.length >= 20 ? (raise "Capacity full") : @bikes << bike
     end
 end
 
