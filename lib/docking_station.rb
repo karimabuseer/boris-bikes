@@ -9,7 +9,7 @@ class DockingStation
     attr_reader :bike
 
     def dock(bike)
-        @bike = bike
+        @bike ? (raise "Capacity full") : @bike = bike
     end
 end
 
