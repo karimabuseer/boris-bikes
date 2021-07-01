@@ -23,11 +23,9 @@ describe DockingStation do
 
     describe '#dock' do
         it 'Should not let us dock bike when one is docked' do
-            20.times { b = Bike.new ; subject.dock(b)}
+            DockingStation::DEFINE_CONSTANT.times { b = Bike.new ; subject.dock(b)}
             expect {subject.dock(Bike.new)}.to raise_error("Capacity full")
         end
     end
 end
-
-
 
