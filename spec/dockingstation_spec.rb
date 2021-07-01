@@ -21,9 +21,13 @@ describe DockingStation do
         expect { subject.release_bike }.to raise_exception("No bikes")
     end
 
+    it 'defaults to constant capacity' do
+        expect(subject.capacity).to eq(DockingStation::DEFINE_CAPACITY)
+    end
+
     describe '#dock' do
         it 'Should not let us dock bike when one is docked' do
-            DockingStation::DEFINE_CONSTANT.times { b = Bike.new ; subject.dock(b)}
+            DockingStation::DEFINE_CAPACITY.times { b = Bike.new ; subject.dock(b)}
             expect {subject.dock(Bike.new)}.to raise_error("Capacity full")
         end
     end
