@@ -13,7 +13,7 @@ class DockingStation
     end
 
     def dock(bike)
-        @bikes.length >= 20 ? (raise "Capacity full") : @bikes << bike
+        @bikes.length >= @capacity ? (raise "Capacity full") : @bikes << bike
     end
 end
 
